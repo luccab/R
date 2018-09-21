@@ -81,9 +81,25 @@ sum(projectsPerYear$Freq)/length(unique(years))
 # Here we can also do a barplot of how many projects were
 # approved each year 
 barplot(table(years), main="Number of projects approved each year")
-#projects <- subset(test, years = unique(years), select = approval.date) 
-#projects
-unique(years)
+"I did an online version of this barplot, using R shiny 
+(library that allow you to plot in webpages) which makes it 
+easy to be integrated in other webpages and present it online.
+To see the graph: https://luccabertoncini.shinyapps.io/test/
+The repository with all the code commented on R shiny:
+https://github.com/luccab/R/tree/master/1
+The server.R (return the server function 'backend' of your graph)
+and ui.R (create the visualization, 'frontend' of the webpage) files
+can be done separated or under the same, as it is on app.R. 
+To add the graph in a webpage, R shiny requires subscription
+but the main files (server.R and ui.R are already done).
+
+ui.R and server.R also have commented parts indicating how 
+to create an interactive graph where people can change the 
+variable and see the change on the graph (all the functions
+are already built and also commented).
+
+
+" 
 
 # 6. What fraction of projects have completion dates that are different from
 # revised completion dates?
@@ -214,7 +230,11 @@ str(projectBudget)
 # We can also draw a plot to observe the distribution of project budget and the
 # count for groups of budgets, to easily see the concentration
 ggplot(as.data.frame(projectBudget), aes(x = projectBudget )) + geom_histogram()+ labs(x = "Project Budget") + labs(title="Count based on groups of project budgets")
-
+# This graph also have an online version in R shiny
+# (hosted by R shiny) which can be acessed: 
+# https://luccabertoncini.shinyapps.io/test1/
+# On my github file the code to make this graph is
+# commented under the ui.R and server.R or app.R files
 
 "
 But if we specify the quantile function to give us a sequence in

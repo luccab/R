@@ -2,6 +2,15 @@
 library(readxl)
 # reading the excel and passing the column types for each column,
 # saving everything on 'test' as a dataFrame
+# I am importing with read_excel and specifying the values
+# in the columns so all the data already comes right, as 
+# we can see with 'str'
+# OBS: my file was inside a folder called 'CS112' please change
+# it accordingly to where the file is in your PC to be able
+# to open it
+# all the data before 1995 and after 1/1/2017 were removed in the 
+# excel, so this excel (datasetforCS112.xlsx)on the github is 
+# already without it.
 datasetforCS112 <- read_excel("~/CS112/datasetforCS112.xlsx", col_types = c("numeric", "text", "text", "date", "date", "date", "date", "numeric", "numeric", "numeric", "numeric"))
 test <- data.frame(datasetforCS112)
 test
@@ -30,8 +39,6 @@ set.seed(213)
 sample(c(0:1), 2, replace = TRUE)
 # (you can set it to FALSE and run a few times, you will
 # see that the values will be always '0' and '1', they will not repeat)
-
-# !!!!! unique(as.numeric(format(test$approval.date, "%Y")))
 
 # generating my questions and printing them
 my_questions_are_these <- sort(sample(c(1:10), 3, replace = FALSE))
